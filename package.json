@@ -1,0 +1,14 @@
+{
+  "name": "semitone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "notecircle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Obakeng M",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}

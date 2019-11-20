@@ -1,25 +1,30 @@
-//  let jsdom = require("jsdom")
 class JamBuddy {
+
     constructor(){
         this.notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
-        
-        this.firstNote;
-        this.secondNote;
-        this.combinedNotes;
+        this.tempNote = [];
+        this.char = [];
     }
 //indexof() - use to return index of an element in an array
     selectNotes(){
-        for(let i=0;i<this.notes.length;i++)
+        let i = 0;
 
-        if(this.firstNote==this.notes[i]||this.secondNote==this.notes[i+1]){
-            
-            this.firstNote = this.notes.filter(noteChecker => noteChecker == "A","A#"  );
-            this.secondNote = this.notes.filter(noteChecker => noteChecker == "A#" );
-            this.combinedNotes = this.firstNote.concat(this.secondNote)
-            console.log(this.combinedNotes);
+        if(this.tempNote==this.notes[0]){
+            this.char = this.notes[i].push(this.tempNote[i])
+            console.log(this.char)
+        }else if(this.tempNote!=this.notes[0]){
 
-            
-        }
+        let randomIndex = Math.floor(Math.random() * 10);
+        // let character =  this.notes.charAt(this.notes[randomIndex])
+        console.log (this.notes[randomIndex]);
+
+        // this.index = this.tempNote[randomIndex].push(this.notes[i]);
+
+        let randIndex2 = Math.floor(Math.random() * 10);
+
+       }
+        
+
 
     }
 
@@ -30,7 +35,13 @@ class JamBuddy {
 
     }
 }
- module.exports = JamBuddy;
+// module.exports = JamBuddy;
 
-jam = new JamBuddy();
-notes = jam.selectNotes(['A','B']);
+ jam = new JamBuddy();
+ notes = jam.selectNotes(['A']);
+
+//  Bubble sort
+// Merge sort
+// Insertion sort
+// Quick sort
+// Heap sort

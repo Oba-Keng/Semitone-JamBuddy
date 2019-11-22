@@ -4,41 +4,80 @@ class JamBuddy {
         this.notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
         this.tempNote = [];
         this.char = [];
+        this.randomIndex;
+        this.randomIndex2;
     }
 //indexof() - use to return index of an element in an array
     selectNotes(){
         let i = 0;
 
-        if(this.tempNote==this.notes[0]){
-            this.char = this.notes[i].push(this.tempNote[i])
+        if(this.tempNote==this.notes[i]){
+            
+            this.char = this.tempNote[i].push(this.notes[i])
+
             console.log(this.char)
-        }else if(this.tempNote!=this.notes[0]){
+        }else if(this.tempNote!=this.notes[i]){
 
-        let randomIndex = Math.floor(Math.random() * 10);
-        // let character =  this.notes.charAt(this.notes[randomIndex])
-        console.log (this.notes[randomIndex]);
+        this.randomIndex = Math.floor(Math.random() * 10);
+        
 
-        // this.index = this.tempNote[randomIndex].push(this.notes[i]);
+        this.character =  this.notes[this.randomIndex]
 
-        let randIndex2 = Math.floor(Math.random() * 10);
+        console.log (this.character);
+
+        // this.index = this.notes[randomIndex].push(this.notes[i]);
 
        }
+
+
+        let j = 0;
+
+        if(this.tempNote==this.notes[j]){
+            
+            this.char = this.tempNote[j].push(this.notes[j])
+
+            console.log(this.char)
+        }
+        else if(this.tempNote!=this.notes[j]){
+
+            this.randomIndex2 = Math.floor(Math.random() * 10);
+
+            console.log (this.notes[this.randomIndex2]);
+
+            if(this.randomIndex=='string'||this.randomIndex2=='string'){
+
+            let finalArray = new Array();
+
+            let finalNote = finalArray.push(this.char,this.notes[this.randomIndex2])
+
+        console.log(finalNote)
+}
+
+
+        }
+
+
+        
+
+
+
         
 
 
     }
 
     checkAnswer(){
-        if(this.combinedNotes==this.firstNote+this.secondNote){
+//         if(this.combinedNotes==this        console.log (this.notes[randomIndex]);
+// .firstNote+this.secondNote){
             
-        }
+//         }
 
     }
 }
 // module.exports = JamBuddy;
 
  jam = new JamBuddy();
- notes = jam.selectNotes(['A']);
+ notes = jam.selectNotes();
 
 //  Bubble sort
 // Merge sort

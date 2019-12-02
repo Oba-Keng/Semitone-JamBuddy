@@ -7,7 +7,7 @@ describe("", function(){
 
     it('selects notes', function(){
         let buddy = new JamBuddy();
-expect(buddy.selectNotes(['A','A#'])).toEqual(['A','A#'])
+expect(buddy.selectNotes()).toEqual(jasmine.any(Array))
 
     });
 

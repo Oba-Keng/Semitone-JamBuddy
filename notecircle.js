@@ -8,19 +8,36 @@ class JamBuddy {
 
 //function that returns two random notes in a notecircle
     selectNotes(){
+
         
         let newNotes = []
         newNotes.push(...this.notes);
-        // console.log(newNotes);
+        console.log(newNotes);
 
         let randomArray = newNotes.sort(()=>Math.random()-0.5)
-        // console.log(randomArray)
+        console.log(randomArray)
         
         this.finalArray = randomArray.slice(0,2);
         this.finalArray.sort();
 
         console.log(this.finalArray)
-        return this.finalArray;
+        // return this.finalArray;
+
+        let table = '';
+        let columns = 3;
+        let rows = 2;
+
+        for(let i=0;i<rows;i++){
+            table += '<tr>'
+            for(let j=0;j<columns;j++){
+
+                table += '<td>' + j + '</td>';
+            }
+            table += '</tr>';
+        }
+        // document.write('<table>' + table + '<table>')
+
+        
 
    
     }
@@ -46,7 +63,7 @@ class JamBuddy {
                     
     }
 }
-module.exports = JamBuddy;
+// module.exports = JamBuddy;
 
  jam = new JamBuddy();
  notes = jam.selectNotes();

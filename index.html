@@ -2,15 +2,26 @@
 <html>
     <head>  
         <title>Note_Circle</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     </head>
     <body>
-        <table>
-            <input type="text" placeholder="Enter first Word" class="firstWord"><br>
-                <button onclick="JamBuddy.selectNotes()" id="btn1">click here</button><br>
-            <input type="text" placeholder="Enter second Word" class="secondWord"><br>
-                <button onclick="JamBuddy.selectNotes()" id="btn2">click here</button>
+        <h1>The Note Circle</h1>
+        <table id="table">
+                <tr>
+                    <th>Note Selector</th> 
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td>  </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>
+                    <button onclick="jam.selectNotes(),jam.checkAnswer()"  id="btn1">Get Random Notes</button>
+                    </td>
+                </tr>
+            </table>
 
-        </table>
         <script type="text/javascript" src="notecircle.js"></script>
     </body>
 </html>

@@ -3,17 +3,18 @@ class JamBuddy {
     constructor(){
         this.notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
         this.finalArray;
+        this.finalDigit;
     }
 
 //function that returns two random notes in a notecircle
     selectNotes(){
         
-        let newArr = []
-        newArr.push(...this.notes);
-        console.log(newArr);
+        let newNotes = []
+        newNotes.push(...this.notes);
+        // console.log(newNotes);
 
-        let randomArray = newArr.sort(()=>Math.random()-0.5)
-        console.log(randomArray)
+        let randomArray = newNotes.sort(()=>Math.random()-0.5)
+        // console.log(randomArray)
         
         this.finalArray = randomArray.slice(0,2);
         this.finalArray.sort();
@@ -24,19 +25,25 @@ class JamBuddy {
    
     }
 
+//method returns the index of selected notes
     checkAnswer(){
 
         let indexOne = this.notes.indexOf(this.finalArray[0])
-                   console.log(indexOne)
+                   console.log("index of first element - " + indexOne)
         let indexTwo = this.notes.indexOf(this.finalArray[1])
-                  console.log(indexTwo)
+                  console.log("index of second element - " + indexTwo)
 
-                  let finalDigit = indexOne - indexTwo;
-                    console.log(finalDigit)
+                  this.finalDigit = indexOne - indexTwo;
+                    // console.log(this.finalDigit)
+
+//converts negative numbers by multiplying the number by one
+
+        this.finalDigit < 0 ? this.finalDigit *=-1 : this.finalDigit
+                    console.log(this.finalDigit + " semitones seperate these notes")
+
+            return this.finalDigit;
 
                     
-                    finalDigit < 0 ? finalDigit *=-1 : finalDigit
-                    console.log(finalDigit)
     }
 }
 module.exports = JamBuddy;

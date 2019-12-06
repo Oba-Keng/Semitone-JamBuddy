@@ -13,7 +13,7 @@ expect(buddy.selectNotes()).toEqual(jasmine.any(Array))
 
     it('checks notes', function(){
         let buddy = new JamBuddy();
-        expect(buddy.checkAnswer()).toEqual(jasmine.any(Number))
+        expect(buddy.checkAnswer(this.finalDigit)).toEqual(true)
     });
 
 })

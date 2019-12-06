@@ -6,7 +6,7 @@ class JamBuddy {
         this.finalDigit;
     }
 
-//function that returns two random notes in a notecircle
+// function that returns two random notes in a notecircle
     selectNotes(){
 
         
@@ -25,7 +25,7 @@ class JamBuddy {
 
     }
 
-//method returns the index of selected notes
+//function returns the index of selected notes
     checkAnswer(){
 
         let indexOne = this.notes.indexOf(this.finalArray[0])
@@ -39,14 +39,16 @@ class JamBuddy {
         this.finalDigit < 0 ? this.finalDigit *=-1 : this.finalDigit
             
         let userAnswer = document.getElementById('answer').value;
+        
 
         if(userAnswer==this.finalDigit){
 
-            return document.getElementById('p1').innerHTML=true;
+            return document.getElementById('p1').innerHTML="You got it right budd,well Done!";
+           
             
 
         }else {
-            return document.getElementById('p1').innerHTML=false;
+            return document.getElementById('p1').innerHTML="Wrong answer! Try again";
         }    
     
 }
@@ -57,8 +59,3 @@ class JamBuddy {
  notes = jam.selectNotes();
  notice = jam.checkAnswer()
 
-//  Bubble sort
-// Merge sort
-// Insertion sort
-// Quick sort
-// Heap sort

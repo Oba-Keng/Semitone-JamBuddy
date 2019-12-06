@@ -12,29 +12,37 @@ class JamBuddy {
         
         let newNotes = []
         newNotes.push(...this.notes);
-        console.log(newNotes);
+        // console.log(newNotes);
+        let originalArray = document.getElementById('pArray').innerHTML=this.newNotes;
+        
 
         let randomArray = newNotes.sort(()=>Math.random()-0.5)
-        console.log(randomArray)
+        // console.log(randomArray)
+        let rArray = document.getElementById('pRandomArray').innerHTML=this.randomArray;
         
         this.finalArray = randomArray.slice(0,2);
         this.finalArray.sort();
 
-        console.log(this.finalArray)
+        // console.log(this.finalArray)
         // return this.finalArray;
+        let fArray = document.getElementById('p').innerHTML=this.finalArray;
 
-        let table = '';
-        let columns = 3;
-        let rows = 2;
+        return (originalArray,rArray,fArray);
 
-        for(let i=0;i<rows;i++){
-            table += '<tr>'
-            for(let j=0;j<columns;j++){
+        
 
-                table += '<td>' + j + '</td>';
-            }
-            table += '</tr>';
-        }
+        // let table = '';
+        // let columns = 3;
+        // let rows = 2;
+
+        // for(let i=0;i<rows;i++){
+        //     table += '<tr>'
+        //     for(let j=0;j<columns;j++){
+
+        //         table += '<td>' + j + '</td>';
+        //     }
+        //     table += '</tr>';
+        // }
         // document.write('<table>' + table + '<table>')
 
         
@@ -58,10 +66,21 @@ class JamBuddy {
         this.finalDigit < 0 ? this.finalDigit *=-1 : this.finalDigit
                     console.log(this.finalDigit + " semitones seperate these notes")
 
-            return this.finalDigit;
+            // return this.finalDigit;
 
-                    
-    }
+        let userAnswer = document.getElementById('answer').value;
+
+        if(userAnswer==this.finalDigit){
+            return document.getElementById('p1').innerHTML=true;
+            
+
+        }else{
+
+            return document.getElementById('p1').innerHTML=false;
+
+                }    
+    
+}
 }
 // module.exports = JamBuddy;
 

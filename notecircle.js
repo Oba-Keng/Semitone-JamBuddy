@@ -30,16 +30,18 @@ class JamBuddy {
     this.finalArray = randomArray.slice(0, 2);
     this.finalArray.sort();
 
-    document.getElementById("pFinalArray").innerHTML = this.finalArray;
+    this.fArray = document.getElementById(
+      "pFinalArray"
+    ).innerHTML = this.finalArray;
 
-    return this.finalArray;
+    return this.fArray;
   }
 
   //function returns the index of selected notes
   checkAnswer() {
-    let indexOne = this.notes.indexOf(this.finalArray[0]);
+    let indexOne = this.notes.indexOf(this.fArray[0]);
 
-    let indexTwo = this.notes.indexOf(this.finalArray[1]);
+    let indexTwo = this.notes.indexOf(this.fArray[1]);
 
     this.finalDigit = indexOne - indexTwo;
 

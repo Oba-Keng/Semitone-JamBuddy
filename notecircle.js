@@ -52,6 +52,9 @@ class JamBuddy {
     this.userAnswer = document.getElementById("answer").value;
 
     //checks if user input is the correct answer
+    if (this.userAnswer == "") {
+      return "";
+    }
     if (this.userAnswer == this.finalDigit) {
       return (document.getElementById("p1").innerHTML =
         "You got it right budd,well Done!");

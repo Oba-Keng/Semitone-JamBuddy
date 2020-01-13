@@ -64,8 +64,8 @@ class JamBuddy {
     }
   }
 }
-// module.exports = JamBuddy;
+module.exports = JamBuddy;
 
-jam = new JamBuddy();
-notes = jam.selectNotes();
-notice = jam.checkAnswer();
+// jam = new JamBuddy();
+// notes = jam.selectNotes();
+// notice = jam.checkAnswer();

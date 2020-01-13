@@ -1,16 +1,23 @@
 const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-
+let fs = require("fs");
 const JamBuddy = require("../notecircle");
 
 describe("a note circle for musical notes that", function() {
   beforeEach(function() {
-    const dom = new jsdom.JSDOM(
-      '<html><body><div id="pFinalArray"><div><input id="answer"></input></div></div></body></html>'
-    );
-    global.document = dom.window.document;
-    global.window = dom.window;
-    global.navigator = dom.window.navigator;
+    const index = fs.readFileSync("./index.html", "utf-8");
+    const { JSDOM } = jsdom;
+    const { document } = new JSDOM(index).window;
+    global.document = document;
+  });
+  it("defines class called JamBuddy", function() {
+    let buddy = new JamBuddy();
+
+    expect(buddy).toBeDefined();
+  });
+  it("function inside JamBuddy class defined", function() {
+    let buddy = new JamBuddy();
+
+    expect(buddy.selectNotes()).toBeDefined();
   });
 
   it("select notes", function() {
@@ -19,12 +26,17 @@ describe("a note circle for musical notes that", function() {
     expect(buddy.selectNotes()).toEqual(jasmine.any(Array));
   });
 
-  it("checks notes", function() {
+  it("checks notes should take in user input", function() {
+    let buddy = new JamBuddy();
+
+    buddy.selectNotes();
+
+    expect(buddy.checkAnswer()).not.toBeNull();
+  });
+  it("should return true or false", function() {
     let buddy = new JamBuddy();
     buddy.selectNotes();
-    buddy.checkAnswer();
-    expect(document.getElementById("answer").value).toEqual(
-      jasmine.any(Number)
-    );
+
+    expect(buddy.checkAnswer()).toEqual(jasmine.any(String));
   });
 });

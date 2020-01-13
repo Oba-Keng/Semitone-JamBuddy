@@ -41,7 +41,6 @@ describe("a note circle for musical notes that", function() {
   });
   it("should expect array to be revealed", function() {
     let buddy = new JamBuddy();
-    buddy.selectNotes();
 
     expect(buddy.expose()).toEqual([
       "A",

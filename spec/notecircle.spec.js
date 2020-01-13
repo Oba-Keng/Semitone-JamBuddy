@@ -3,11 +3,10 @@ const { JSDOM } = jsdom;
 
 const JamBuddy = require("../notecircle");
 
-describe("", function() {
+describe("a note circle for musical notes that", function() {
   beforeEach(function() {
     const dom = new jsdom.JSDOM(
-      '<html><body><div id="pFinalArray"></div></body></html>',
-      '<html><body><div><input id="answer"></input></div></body></html>'
+      '<html><body><div id="pFinalArray"><div><input id="answer"></input></div></div></body></html>'
     );
     global.document = dom.window.document;
     global.window = dom.window;
@@ -22,7 +21,10 @@ describe("", function() {
 
   it("checks notes", function() {
     let buddy = new JamBuddy();
-
-    expect(buddy.checkAnswer()).toEqual(jasmine.any(Number));
+    buddy.selectNotes();
+    buddy.checkAnswer();
+    expect(document.getElementById("answer").value).toEqual(
+      jasmine.any(Number)
+    );
   });
 });

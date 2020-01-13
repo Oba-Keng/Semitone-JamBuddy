@@ -39,9 +39,9 @@ class JamBuddy {
 
   //function returns the index of selected notes
   checkAnswer() {
-    let indexOne = this.notes.indexOf(this.fArray[0]);
+    let indexOne = this.notes.indexOf(this.finalArray[0]);
 
-    let indexTwo = this.notes.indexOf(this.fArray[1]);
+    let indexTwo = this.notes.indexOf(this.finalArray[1]);
 
     this.finalDigit = indexOne - indexTwo;
 
@@ -51,7 +51,7 @@ class JamBuddy {
 
     this.userAnswer = document.getElementById("answer").value;
 
-    //checks if user input is the correct answer
+    // checks if user input is the correct answer
     if (this.userAnswer == "") {
       return "";
     }

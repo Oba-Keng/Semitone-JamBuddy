@@ -63,6 +63,12 @@ class JamBuddy {
         "Wrong answer! Try again");
     }
   }
+  expose() {
+    this.revealAnswer = document.getElementById(
+      "reveal"
+    ).innerHTML = this.notes;
+    return this.revealAnswer;
+  }
 }
 module.exports = JamBuddy;
 

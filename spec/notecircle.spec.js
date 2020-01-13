@@ -39,4 +39,23 @@ describe("a note circle for musical notes that", function() {
 
     expect(buddy.checkAnswer()).toEqual(jasmine.any(String));
   });
+  it("should expect array to be revealed", function() {
+    let buddy = new JamBuddy();
+    buddy.selectNotes();
+
+    expect(buddy.expose()).toEqual([
+      "A",
+      "A#",
+      "B",
+      "C",
+      "C#",
+      "D",
+      "D#",
+      "E",
+      "F",
+      "F#",
+      "G",
+      "G#"
+    ]);
+  });
 });

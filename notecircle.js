@@ -65,13 +65,13 @@ class JamBuddy {
   }
   expose() {
     this.revealAnswer = document.getElementById(
-      "reveal"
+      "explanation"
     ).innerHTML = this.notes;
     return this.revealAnswer;
   }
 }
-module.exports = JamBuddy;
+// module.exports = JamBuddy;
 
-// jam = new JamBuddy();
-// notes = jam.selectNotes();
-// notice = jam.checkAnswer();
+jam = new JamBuddy();
+notes = jam.selectNotes();
+notice = jam.checkAnswer();

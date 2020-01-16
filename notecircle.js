@@ -35,14 +35,14 @@ class JamBuddy {
 
     for (let i = 0; i < this.finalArray.length; i++) {
       for (let j = 0; j < this.finalArray[i].length; j++) {
-        if (this.finalArray[i].length > 1) {
+        if (this.finalArray[j].length > 1) {
+          this.finalArray[i][Math.random().toFixed()];
           this.newArr = this.finalArray[i].splice(0, 1);
 
           return this.newArr;
         }
       }
     }
-
     this.fArray = document.getElementById(
       "pFinalArray"
     ).innerHTML = this.finalArray;

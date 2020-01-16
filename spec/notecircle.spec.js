@@ -44,17 +44,17 @@ describe("a note circle for musical notes that", function() {
 
     expect(buddy.expose()).toEqual([
       "A",
-      "A#",
+      ["A#", "Bb"],
       "B",
       "C",
-      "C#",
+      ["C#", "Db"],
       "D",
-      "D#",
+      ["D#", "Eb"],
       "E",
       "F",
-      "F#",
+      ["F#", "Gb"],
       "G",
-      "G#"
+      ["G#", "Ab"]
     ]);
   });
 });

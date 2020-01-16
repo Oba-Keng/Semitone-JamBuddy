@@ -2,33 +2,46 @@ class JamBuddy {
   constructor() {
     this.notes = [
       "A",
-      "A#",
+      ["A#", "Bb"],
       "B",
       "C",
-      "C#",
+      ["C#", "Db"],
       "D",
-      "D#",
+      ["D#", "Eb"],
       "E",
       "F",
-      "F#",
+      ["F#", "Gb"],
       "G",
-      "G#"
+      ["G#", "Ab"]
     ];
     this.finalArray;
+    this.newArr;
     this.finalDigit;
     this.fArray;
     this.userAnswer;
+    this.revealAnswer;
   }
 
   // function that returns two random notes in a notecircle
   selectNotes() {
     let newNotes = [];
+
     newNotes.push(...this.notes);
 
     let randomArray = newNotes.sort(() => Math.random() - 0.5);
 
     this.finalArray = randomArray.slice(0, 2);
     this.finalArray.sort();
+
+    for (let i = 0; i < this.finalArray.length; i++) {
+      for (let j = 0; j < this.finalArray[i].length; j++) {
+        if (this.finalArray[i].length > 1) {
+          this.newArr = this.finalArray[i].splice(0, 1);
+
+          return this.newArr;
+        }
+      }
+    }
 
     this.fArray = document.getElementById(
       "pFinalArray"
@@ -69,6 +82,7 @@ class JamBuddy {
     ).innerHTML = this.notes;
     return this.revealAnswer;
   }
+  hide() {}
 }
 // module.exports = JamBuddy;
 

@@ -33,19 +33,23 @@ class JamBuddy {
     this.finalArray = randomArray.slice(0, 2);
     this.finalArray.sort();
 
-    for (let i = 0; i < this.finalArray.length; i++) {
-      for (let j = 0; j < this.finalArray[i].length; j++) {
-        if (this.finalArray[j].length > 1) {
-          this.finalArray[i][Math.random().toFixed()];
-          this.newArr = this.finalArray[i].splice(0, 1);
+    let ran = Math.random * 1;
 
-          return this.newArr;
+    let random = ran.toFixed();
+
+    for (let i = 0; i < this.finalArray.length; i++) {
+      this.finalArray[i][random];
+
+      for (let j = i - 1; j < this.finalArray[i].length; j++) {
+        if (this.finalArray[i].length > 1) {
+          this.finalArray[i].splice(0, 1);
         }
       }
     }
     this.fArray = document.getElementById(
       "pFinalArray"
     ).innerHTML = this.finalArray;
+    // console.log(this.finaArray);
 
     return this.fArray;
   }
@@ -82,7 +86,13 @@ class JamBuddy {
     ).innerHTML = this.notes;
     return this.revealAnswer;
   }
-  hide() {}
+  //  hide() {
+  //     let hidediv = document.getElementById("explanation");
+  //     document.onclick = function(div) {
+  //       if (div.target.id !== "explanation") {
+  //         hidediv.style.display = "none";
+  //       }
+  //     };
 }
 // module.exports = JamBuddy;
 

@@ -7,6 +7,16 @@
   </head>
   <h1>The Note Circle</h1>
   <body>
+    <script>
+      window.onload = function() {
+        let hidediv = document.getElementById("explanation");
+        document.onclick = function(div) {
+          if (div.target.id !== "explanation") {
+            hidediv.style.display = "none";
+          }
+        };
+    </script>
+
     <div>
       <button onclick="jam.selectNotes()" id="btn1">
         Get Random Notes

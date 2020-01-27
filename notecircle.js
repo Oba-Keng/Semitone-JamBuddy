@@ -82,11 +82,10 @@ class JamBuddy {
         (document.getElementById("p1").innerHTML = "Wrong answer! Try again")
       );
     }
-    while (this.userAnswer == this.finalDigit) {
-      let i = 0;
-      // ++i;
+    let i = 0;
 
-      return (document.getElementById("count").innerHTML = "Streak:" + (i + 1));
+    while (this.userAnswer == this.finalDigit) {
+      return (document.getElementById("count").innerHTML = "Streak:" + i), i++;
     }
   }
   expose() {

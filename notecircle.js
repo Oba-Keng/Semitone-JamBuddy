@@ -73,11 +73,20 @@ class JamBuddy {
       return "";
     }
     if (this.userAnswer == this.finalDigit) {
-      return (document.getElementById("p1").innerHTML =
-        "You got it right budd,well Done!");
+      console.log(
+        (document.getElementById("p1").innerHTML =
+          "You got it right budd,well Done!")
+      );
     } else {
-      return (document.getElementById("p1").innerHTML =
-        "Wrong answer! Try again");
+      console.log(
+        (document.getElementById("p1").innerHTML = "Wrong answer! Try again")
+      );
+    }
+    while (this.userAnswer == this.finalDigit) {
+      let i = 0;
+      // ++i;
+
+      return (document.getElementById("count").innerHTML = "Streak:" + (i + 1));
     }
   }
   expose() {
